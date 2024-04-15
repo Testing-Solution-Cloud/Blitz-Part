@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: Blitz-Part
+    package:
+        name: Blitz-Part
+        api_version: '61.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Blitz-Part/tests
+            options:
+                outputdir: robot/Blitz-Part/results
+
+    robot_testdoc:
+        options:
+            path: robot/Blitz-Part/tests
+            output: robot/Blitz-Part/doc/Blitz-Part_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
